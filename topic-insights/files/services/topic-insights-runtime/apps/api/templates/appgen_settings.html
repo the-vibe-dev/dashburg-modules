@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>AppGen Settings</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-slate-950 text-slate-100"><div class="max-w-4xl mx-auto p-6"><h1 class="text-2xl font-semibold">AppGen Settings</h1>
+<form method="post" action="/appgen/settings" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+<label class="p-3 rounded bg-slate-900 border border-slate-800">Allow Stub Persistence<input type="checkbox" name="allow_stub_persistence" {% if cfg.appgen.workflow.allow_stub_persistence %}checked{% endif %} class="ml-2"></label>
+<label class="p-3 rounded bg-slate-900 border border-slate-800">Dedupe Window Days<input type="number" name="dedupe_window_days" value="{{ cfg.appgen.workflow.dedupe_window_days }}" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-700"></label>
+<label class="p-3 rounded bg-slate-900 border border-slate-800">High Score Threshold<input type="number" step="0.1" name="high_score_threshold" value="{{ cfg.appgen.workflow.high_score_threshold }}" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-700"></label>
+<label class="p-3 rounded bg-slate-900 border border-slate-800">Ideas Per Generate<input type="number" name="ideas_per_generate" value="{{ cfg.appgen.workflow.ideas_per_generate }}" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-700"></label>
+<label class="p-3 rounded bg-slate-900 border border-slate-800">Min Distinct Categories<input type="number" name="min_distinct_categories" value="{{ cfg.appgen.workflow.min_distinct_categories }}" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-700"></label>
+<label class="p-3 rounded bg-slate-900 border border-slate-800">Min Distinct Pain Themes<input type="number" name="min_distinct_pain_themes" value="{{ cfg.appgen.workflow.min_distinct_pain_themes }}" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-700"></label>
+<button class="px-3 py-2 rounded bg-indigo-600">Save</button>
+</form>
+</div></body></html>

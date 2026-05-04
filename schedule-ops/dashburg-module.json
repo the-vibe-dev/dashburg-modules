@@ -16,5 +16,10 @@
   "frontend": {
     "key": "scheduleops",
     "export": "scheduleOpsModule"
+  },
+  "runtime": {
+    "mode": "host-and-runner",
+    "service_dir": null,
+    "notes": "Uses the public host plus local runner; no separate upstream service required."
   }
 }

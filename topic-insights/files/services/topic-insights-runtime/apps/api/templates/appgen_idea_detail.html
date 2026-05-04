@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Idea</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-slate-950 text-slate-100"><div class="max-w-6xl mx-auto p-6">
+  <a href="/appgen/ideas" class="text-slate-300">Back</a>
+  <div class="mt-2 flex items-center gap-3"><h1 class="text-2xl font-semibold">{{ idea.title }}</h1><span class="px-2 py-1 rounded bg-slate-800 text-xs">{{ idea.status }}</span><span class="px-2 py-1 rounded bg-slate-800 text-xs">{{ idea.execution_stage }}</span>{% if idea.imported_from %}<span class="px-2 py-1 rounded bg-amber-800 text-xs">imported</span>{% endif %}{% if idea.needs_scoring %}<span class="px-2 py-1 rounded bg-red-800 text-xs">needs_scoring</span>{% endif %}</div>
+  <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">{% for k,v in (idea.scores or {}).items() %}<div class="p-2 rounded bg-slate-900 border border-slate-800"><div class="text-slate-400">{{ k }}</div><div>{{ v }}</div></div>{% endfor %}</div>
+  <div class="mt-4 flex gap-2"><button onclick="scoreNow()" class="px-3 py-2 rounded bg-indigo-600">Score Now</button><button onclick="exportNow()" class="px-3 py-2 rounded bg-emerald-600">Export to AppCreator</button><button onclick="copyId()" class="px-3 py-2 rounded bg-slate-700">Copy ID</button></div>
+  <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-3 rounded bg-slate-900 border border-slate-800"><h2 class="font-semibold">Overview</h2><p class="mt-2 text-slate-300">{{ idea.problem_statement }}</p><p class="mt-2">Target: {{ idea.target_user }}</p><p>Pain: {{ idea.primary_pain_point }}</p></div>
+  <div class="p-3 rounded bg-slate-900 border border-slate-800"><h2 class="font-semibold">Runs</h2>{% for r in runs %}<div class="text-sm mt-2"><a class="text-sky-300" href="/appgen/runs/{{ r.id }}">{{ r.id }}</a> {{ r.run_type }} {{ r.status }} {{ r.provider_used or '' }} {{ r.model_used or '' }}</div>{% endfor %}</div></div>
+  <div class="mt-4 p-3 rounded bg-slate-900 border border-slate-800"><h2 class="font-semibold">Artifacts</h2>{% for a in artifacts %}<details class="mt-2"><summary>{{ a.kind }} ({{ a.content_format }})</summary><pre class="text-xs whitespace-pre-wrap">{{ a.content_text }}</pre></details>{% endfor %}</div>
+</div>
+<script>
+function copyId(){navigator.clipboard.writeText("{{ idea.id }}")}
+async function scoreNow(){await fetch('/api/appgen/ideas/{{ idea.id }}/score',{method:'POST'}); location.reload();}
+async function exportNow(){await fetch('/api/appgen/ideas/{{ idea.id }}/export/appcreator',{method:'POST'}); location.reload();}
+</script>
+</body></html>

@@ -1,0 +1,56 @@
+You are AppGen opportunity generator.
+Generate exactly {count} ideas from the evidence below.
+
+Hard requirements:
+1) Every idea must be materially different from the others.
+2) Avoid near-duplicate titles and "smart <noun> automation" clones.
+3) Use at least 3 distinct solution archetypes when count >= 4.
+4) Ground each idea in concrete pain evidence from the provided pain points.
+5) Prefer specific ICPs and narrow wedges over broad generic products.
+
+Archetypes to diversify across:
+- workflow_tool
+- ai_copilot
+- integration_sync
+- monitoring_compliance
+- managed_service_enablement
+- data_quality_sidecar
+- vertical_micro_saas
+
+Return JSON only:
+{
+  "ideas": [
+    {
+      "title": "...",
+      "one_liner": "...",
+      "problem_statement": "...",
+      "target_user": "...",
+      "primary_pain_point": "...",
+      "category": "...",
+      "archetype": "...",
+      "icp_segment": "...",
+      "differentiation": "...",
+      "why_now": "...",
+      "evidence_snippets": ["..."],
+      "scores": {
+        "pain_score": 0-10,
+        "market_score": 0-10,
+        "monetization_score": 0-10,
+        "complexity_score": 0-10,
+        "distribution_score": 0-10,
+        "ai_leverage_score": 0-10
+      },
+      "tags": ["..."]
+    }
+  ]
+}
+
+Constraints: {constraints}
+
+PAIN POINTS:
+{pain_points}
+
+SEED:
+{seed_text}
+
+{workflow_bias_block}

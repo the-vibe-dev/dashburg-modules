@@ -15,5 +15,11 @@
   "frontend": {
     "key": "webagent",
     "export": "webAgentModule"
+  },
+  "runtime": {
+    "mode": "local-runner-node",
+    "service_dir": null,
+    "default_port": 8444,
+    "notes": "No separate upstream API required if runner + webagent node run on the same device."
   }
 }

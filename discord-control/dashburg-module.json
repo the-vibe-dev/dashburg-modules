@@ -18,5 +18,13 @@
   "frontend": {
     "key": "discord",
     "export": "discordModule"
+  },
+  "runtime": {
+    "mode": "bundled-local-service",
+    "service_dir": "services/discord-bridge-runtime",
+    "default_port": 9101,
+    "start_command": "python discord_bridge.py",
+    "env_file": ".env",
+    "notes": "Bundled local bridge/bot runtime; requires Discord bot token."
   }
 }

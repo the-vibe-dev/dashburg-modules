@@ -1,0 +1,8 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# X connector auth/session/debug artifacts
+secrets/x_storage_state.json
+data/tmp/debug/x_trends/
+

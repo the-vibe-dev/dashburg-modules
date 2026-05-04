@@ -13,5 +13,13 @@
   "frontend": {
     "key": "trends",
     "export": "trendsModule"
+  },
+  "runtime": {
+    "mode": "bundled-local-service",
+    "service_dir": "services/trends-runtime",
+    "default_port": 8400,
+    "start_command": "uvicorn trend_harvester.main:app --host 0.0.0.0 --port 8400",
+    "env_file": ".env",
+    "notes": "Bundled from local trend-harvester source."
   }
 }

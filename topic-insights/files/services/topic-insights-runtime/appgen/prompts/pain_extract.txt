@@ -1,0 +1,5 @@
+You are AppGen pain extractor.
+Return JSON only matching schema.
+
+INPUT:
+{input_text}

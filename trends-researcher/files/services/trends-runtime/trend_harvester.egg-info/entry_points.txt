@@ -1,0 +1,2 @@
+[console_scripts]
+trend-harvester = trend_harvester.cli:main

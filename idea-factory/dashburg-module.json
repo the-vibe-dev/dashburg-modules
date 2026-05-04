@@ -15,5 +15,10 @@
   "frontend": {
     "key": "appgen",
     "export": "appgenModule"
+  },
+  "runtime": {
+    "mode": "depends-on-bundled-local-service",
+    "service": "topic-insights",
+    "notes": "Runs through the bundled TopicInsights/OIE runtime."
   }
 }

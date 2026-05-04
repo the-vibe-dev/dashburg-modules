@@ -13,5 +13,13 @@
   "frontend": {
     "key": "topicinsights",
     "export": "topicInsightsModule"
+  },
+  "runtime": {
+    "mode": "bundled-local-service",
+    "service_dir": "services/topic-insights-runtime",
+    "default_port": 8080,
+    "start_command": "uvicorn apps.api.main:app --host 0.0.0.0 --port 8080",
+    "env_file": ".env",
+    "notes": "Bundled from local newtopic/OIE source."
   }
 }

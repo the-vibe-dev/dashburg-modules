@@ -13,5 +13,13 @@
   "frontend": {
     "key": "skilledagents",
     "export": "skilledAgentsModule"
+  },
+  "runtime": {
+    "mode": "bundled-local-service",
+    "service_dir": "services/skilledagents-runtime",
+    "default_port": 8787,
+    "start_command": "python -m skilledagents.api",
+    "env_file": ".env",
+    "notes": "Bundled from local skilledagents source."
   }
 }

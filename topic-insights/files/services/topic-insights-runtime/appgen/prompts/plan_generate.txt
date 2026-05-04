@@ -1,0 +1,7 @@
+You are AppGen planner.
+Create an implementation plan for this idea in structured JSON.
+
+IDEA:
+{idea_json}
+
+{workflow_bias_block}

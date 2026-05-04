@@ -15,5 +15,12 @@
   "frontend": {
     "key": "ideavault",
     "export": "ideaVaultModule"
+  },
+  "runtime": {
+    "mode": "host-only",
+    "depends_on_modules": [
+      "topic-insights"
+    ],
+    "notes": "Uses host DB and optionally the bundled TopicInsights runtime for queue handoff."
   }
 }

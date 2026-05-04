@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AppGen Ideas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <div class="max-w-7xl mx-auto p-6">
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-semibold">AppGen Ideas</h1>
+      <div class="flex gap-3 text-sm"><a href="/appgen/runs" class="text-slate-300 hover:text-white">Runs</a><a href="/appgen/settings" class="text-slate-300 hover:text-white">Settings</a></div>
+    </div>
+    <form class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-2">
+      <input name="q" value="{{ filters.q or '' }}" placeholder="Search" class="px-3 py-2 rounded bg-slate-900 border border-slate-700"/>
+      <select name="status" class="px-3 py-2 rounded bg-slate-900 border border-slate-700"><option value="">All status</option><option value="idea">idea</option><option value="researched">researched</option><option value="validated">validated</option></select>
+      <select name="sort" class="px-3 py-2 rounded bg-slate-900 border border-slate-700"><option value="overall_score_desc">overall desc</option><option value="updated_desc">updated desc</option></select>
+      <select name="needs_scoring" class="px-3 py-2 rounded bg-slate-900 border border-slate-700"><option value="">needs_scoring any</option><option value="true">needs_scoring</option><option value="false">scored</option></select>
+      <select name="imported" class="px-3 py-2 rounded bg-slate-900 border border-slate-700"><option value="">import any</option><option value="true">imported</option><option value="false">not imported</option></select>
+      <button class="px-3 py-2 rounded bg-indigo-600">Apply</button>
+    </form>
+
+    <div class="mt-6 overflow-x-auto rounded border border-slate-800">
+      <table class="w-full text-sm">
+        <thead class="bg-slate-900 text-slate-300"><tr><th class="text-left p-2">Title</th><th class="text-left p-2">Category</th><th class="text-left p-2">Overall</th><th class="text-left p-2">Pain</th><th class="text-left p-2">Market</th><th class="text-left p-2">Monetization</th><th class="text-left p-2">Complexity</th><th class="text-left p-2">Status</th><th class="text-left p-2">Updated</th></tr></thead>
+        <tbody>
+          {% for i in ideas %}
+          <tr class="border-t border-slate-800 hover:bg-slate-900/50 cursor-pointer" onclick="location.href='/appgen/ideas/{{ i.id }}'">
+            <td class="p-2">{{ i.title }}</td>
+            <td class="p-2">{{ i.category or '-' }}</td>
+            <td class="p-2">{{ '%.2f'|format((i.scores or {}).get('overall_score', 0)) if not i.needs_scoring else 'needs_scoring' }}</td>
+            <td class="p-2">{{ '%.2f'|format((i.scores or {}).get('pain_score', 0)) }}</td>
+            <td class="p-2">{{ '%.2f'|format((i.scores or {}).get('market_score', 0)) }}</td>
+            <td class="p-2">{{ '%.2f'|format((i.scores or {}).get('monetization_score', 0)) }}</td>
+            <td class="p-2">{{ '%.2f'|format((i.scores or {}).get('complexity_score', 0)) }}</td>
+            <td class="p-2">{{ i.status }}</td>
+            <td class="p-2">{{ i.updated_at }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

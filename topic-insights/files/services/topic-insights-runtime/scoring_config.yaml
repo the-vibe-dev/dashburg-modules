@@ -1,0 +1,42 @@
+version: 1
+weights:
+  pain:
+    engagement: 0.25
+    intensity: 0.30
+    frequency: 0.30
+    workaround_bonus: 0.15
+  competition_penalty:
+    competitor_count: 0.40
+    seo_saturation: 0.30
+    funding_signal: 0.30
+  final:
+    pain: 0.45
+    simplicity: 0.25
+    monetization: 0.20
+    competition_penalty: 0.20
+
+thresholds:
+  min_cluster_size: 3
+
+scales:
+  opportunity_score_max: 100.0
+
+competition_scan:
+  enabled: true
+
+simplicity_rules:
+  hardware_required_penalty: 3
+  network_effects_penalty: 2
+  regulatory_risk_penalty: 2
+  api_leverage_bonus: 2
+  single_purpose_bonus: 2
+
+theme_boosts:
+  - keywords: ["emotional abuse", "financial control", "trapped", "coercive", "relationship abuse", "domestic abuse"]
+    boost: 0.12
+  - keywords: ["adhd", "executive dysfunction", "attention", "procrastination", "shame", "underachievement"]
+    boost: 0.10
+  - keywords: ["job application", "ghosting", "resume", "ats", "recruiter silence", "interview feedback"]
+    boost: 0.11
+  - keywords: ["autonomy", "control", "restriction", "agency", "permission", "surveillance"]
+    boost: 0.09

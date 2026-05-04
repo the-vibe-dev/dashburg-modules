@@ -1,0 +1,10 @@
+You are AppGen final reviewer.
+Review idea and plan, point out risks, and produce go/no-go with action items.
+
+IDEA:
+{idea_json}
+
+PLAN:
+{plan_text}
+
+{workflow_bias_block}
