@@ -50,3 +50,8 @@ DISCORD_BRIDGE_PORT=9101
 ## Notes
 - The bot token is required for real Discord connectivity.
 - This bundle removes the need for a separate bridge host, but not for Discord credentials.
+
+## User service template
+- Template file: `systemd/dashburg-module-discord-control.service.template`
+- Host-side install: `~/apps/dashgithub/scripts/manage_modules.sh runtime-install-service discord-control`
+- Host-side start: `~/apps/dashgithub/scripts/manage_modules.sh runtime-start-service discord-control`

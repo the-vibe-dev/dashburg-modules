@@ -57,7 +57,7 @@ Copy `.env.example` to `.env` and set values:
 - `DATABASE_URL` (default local SQLite file)
 - `YOUTUBE_API_KEY` (required for YouTube connector)
 - `OLLAMA_BASE_URL` + `OLLAMA_MODEL` (required for LLM analysis)
-- `OLLAMA_BASE_URLS` (optional comma-separated list for multi-server load distribution, e.g. `http://localhost:11434,http://192.168.1.176:11436`)
+- `OLLAMA_BASE_URLS` (optional comma-separated list for multi-server load distribution, e.g. `http://localhost:11434,http://127.0.0.1:11436`)
 - `LLM_MAX_PARALLEL`, `LLM_NUM_PREDICT`, `LLM_TIMEOUT_SECONDS` (use these to tune slow local models)
 - `ENABLE_SOURCE_CACHE` (default false; keeps repeated runs from returning cached source snapshots)
 - `NOVELTY_*_PENALTY` (rerank repeated/used/skipped/blacklisted topics lower)

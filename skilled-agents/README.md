@@ -47,3 +47,8 @@ SKILLED_AGENTS_BASE_URL=http://127.0.0.1:8787
 ## Notes
 - This bundle is sourced from the local `~/skilledagents` repo.
 - If you want auth, set `SKILLEDAGENTS_API_KEY` in both the runtime and host env.
+
+## User service template
+- Template file: `systemd/dashburg-module-skilled-agents.service.template`
+- Host-side install: `~/apps/dashgithub/scripts/manage_modules.sh runtime-install-service skilled-agents`
+- Host-side start: `~/apps/dashgithub/scripts/manage_modules.sh runtime-start-service skilled-agents`

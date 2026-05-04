@@ -48,3 +48,8 @@ DASHBURG_TRENDS_API_BASE_URL=http://127.0.0.1:8400
 ## Notes
 - This bundle is sourced from the local `trend-harvester` codebase.
 - Exports into IdeaFactory remain local if both modules are installed.
+
+## User service template
+- Template file: `systemd/dashburg-module-trends-researcher.service.template`
+- Host-side install: `~/apps/dashgithub/scripts/manage_modules.sh runtime-install-service trends-researcher`
+- Host-side start: `~/apps/dashgithub/scripts/manage_modules.sh runtime-start-service trends-researcher`

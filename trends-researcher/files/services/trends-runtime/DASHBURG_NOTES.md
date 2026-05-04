@@ -50,7 +50,7 @@
 - Current registry entries do not yet include `youtube_channel_id`, so fallback behavior remains active until IDs are added.
 
 ## Env / Ops
-- `.env` should live at the repo root: [`.env`](/home/trilobyte/ai/trends/.env)
+- `.env` should live at the repo root: [`.env`](/opt/dashburg-modules/trends-runtime/.env)
 - Required for YouTube metadata refresh: `YOUTUBE_API_KEY`
 - Optional tuning:
   - `CHANNEL_METADATA_TTL_DAYS=7`
@@ -103,11 +103,11 @@ trend-harvester refresh-channel-metadata --force
 
 ### Key implementation files
 - Scheduler + state persistence:
-  - `/home/trilobyte/ai/trends/trend_harvester/api/routes.py`
+  - `/opt/dashburg-modules/trends-runtime/trend_harvester/api/routes.py`
 - Multi-phase LLM orchestration (Interpreter/Generator/Grouping/Big Calls):
-  - `/home/trilobyte/ai/trends/trend_harvester/services/strategy_pass.py`
+  - `/opt/dashburg-modules/trends-runtime/trend_harvester/services/strategy_pass.py`
 - Shared LLM strict-JSON helper:
-  - `/home/trilobyte/ai/trends/trend_harvester/services/llm.py`
+  - `/opt/dashburg-modules/trends-runtime/trend_harvester/services/llm.py`
 
 ### Dashburg frontend behavior
 - Trends page shows explicit strategy status banner.

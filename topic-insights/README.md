@@ -48,3 +48,8 @@ TOPIC_BASE_URL=http://127.0.0.1:8080
 ## Notes
 - This bundle is sourced from the local `newtopic` OIE codebase.
 - `idea-factory` and `ideavault` use this local runtime instead of a remote Topic API.
+
+## User service template
+- Template file: `systemd/dashburg-module-topic-insights.service.template`
+- Host-side install: `~/apps/dashgithub/scripts/manage_modules.sh runtime-install-service topic-insights`
+- Host-side start: `~/apps/dashgithub/scripts/manage_modules.sh runtime-start-service topic-insights`

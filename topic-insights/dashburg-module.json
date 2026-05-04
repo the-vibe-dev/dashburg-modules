@@ -20,6 +20,11 @@
     "default_port": 8080,
     "start_command": "uvicorn apps.api.main:app --host 0.0.0.0 --port 8080",
     "env_file": ".env",
-    "notes": "Bundled from local newtopic/OIE source."
+    "notes": "Bundled from local newtopic/OIE source.",
+    "health_path": "/api/v1/health",
+    "install_command": "pip install -r requirements.txt",
+    "post_install": [
+      "python -m apps.cli.main db-init --reset"
+    ]
   }
 }

@@ -20,6 +20,11 @@
     "default_port": 8400,
     "start_command": "uvicorn trend_harvester.main:app --host 0.0.0.0 --port 8400",
     "env_file": ".env",
-    "notes": "Bundled from local trend-harvester source."
+    "notes": "Bundled from local trend-harvester source.",
+    "health_path": "/api/health",
+    "install_command": "pip install -e .[dev]",
+    "post_install": [
+      ".venv/bin/trend-harvester migrate || trend-harvester migrate"
+    ]
   }
 }

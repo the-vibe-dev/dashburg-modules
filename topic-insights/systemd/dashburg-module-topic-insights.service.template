@@ -1,0 +1,18 @@
+[Unit]
+Description=Dashburg Module Runtime: topic-insights
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__DASHGITHUB_ROOT__/services/topic-insights-runtime
+EnvironmentFile=-__DASHGITHUB_ROOT__/.env
+EnvironmentFile=-__DASHGITHUB_ROOT__/services/topic-insights-runtime/.env
+ExecStart=/bin/bash -lc 'source .venv/bin/activate && exec uvicorn apps.api.main:app --host 0.0.0.0 --port 8080'
+Restart=always
+RestartSec=3
+StandardOutput=append:__DASHGITHUB_ROOT__/data/module-system/logs/topic-insights.log
+StandardError=append:__DASHGITHUB_ROOT__/data/module-system/logs/topic-insights.log
+
+[Install]
+WantedBy=default.target

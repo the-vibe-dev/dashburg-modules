@@ -1,0 +1,18 @@
+[Unit]
+Description=Dashburg Module Runtime: skilled-agents
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__DASHGITHUB_ROOT__/services/skilledagents-runtime
+EnvironmentFile=-__DASHGITHUB_ROOT__/.env
+EnvironmentFile=-__DASHGITHUB_ROOT__/services/skilledagents-runtime/.env
+ExecStart=/bin/bash -lc 'source .venv/bin/activate && exec python -m skilledagents.api'
+Restart=always
+RestartSec=3
+StandardOutput=append:__DASHGITHUB_ROOT__/data/module-system/logs/skilled-agents.log
+StandardError=append:__DASHGITHUB_ROOT__/data/module-system/logs/skilled-agents.log
+
+[Install]
+WantedBy=default.target

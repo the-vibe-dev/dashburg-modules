@@ -68,7 +68,7 @@ class Settings(BaseSettings):
     llm_timeout_seconds: float = 120.0
     llm_max_http_attempts_per_run: int = 600
     redis_broker_enabled: bool = True
-    redis_broker_base_url: str = "http://192.168.1.177:8710"
+    redis_broker_base_url: str = "http://127.0.0.1:8710"
     redis_llm_jobs_path: str = "/llm/jobs"
     redis_broker_poll_s: float = 1.0
     redis_broker_timeout_s: float = 900.0

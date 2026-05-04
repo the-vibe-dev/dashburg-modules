@@ -25,7 +25,7 @@ app.include_router(api_v1_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://192.168.1.153",
+        "http://127.0.0.1",
         "http://dashburg.local",
         "http://localhost:5173",
     ],

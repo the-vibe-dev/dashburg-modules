@@ -85,7 +85,7 @@ class Settings:
     llm_local_max_concurrency: int = int(os.getenv("LLM_LOCAL_MAX_CONCURRENCY", "2"))
     llm_openai_max_concurrency: int = int(os.getenv("LLM_OPENAI_MAX_CONCURRENCY", "4"))
     redis_broker_enabled: bool = os.getenv("REDIS_BROKER_ENABLED", "1").lower() in ("1", "true", "yes")
-    redis_broker_base_url: str = os.getenv("REDIS_BROKER_BASE_URL", "http://192.168.1.177:8710")
+    redis_broker_base_url: str = os.getenv("REDIS_BROKER_BASE_URL", "http://127.0.0.1:8710")
     redis_llm_jobs_path: str = os.getenv("REDIS_LLM_JOBS_PATH", "/llm/jobs")
     redis_broker_poll_s: float = float(os.getenv("REDIS_BROKER_POLL_S", "1.0"))
     redis_broker_timeout_s: float = float(os.getenv("REDIS_BROKER_TIMEOUT_S", "900"))

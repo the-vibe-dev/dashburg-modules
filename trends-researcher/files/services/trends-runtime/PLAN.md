@@ -95,7 +95,7 @@ Impact:
 - Add a dedicated channel discovery service that can merge:
   - explicit env overrides,
   - monitor status files,
-  - repo metadata from `/home/trilobyte/ai/*`,
+  - repo metadata from `/opt/dashburg-modules/*`,
   - optional shared export from Dashburg if available.
 - Define a canonical channel record structure:
   - `slug`

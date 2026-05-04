@@ -865,7 +865,7 @@ def _ops_help_text() -> str:
         "- What is running on node aitts?\n"
         "- Where is node topicsite?\n"
         "- How many videos were created today?\n"
-        "- ping 192.168.1.1 5"
+        "- ping 1.1.1.1 5"
     )
 
 

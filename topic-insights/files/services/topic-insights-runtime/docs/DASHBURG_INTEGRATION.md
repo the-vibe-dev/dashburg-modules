@@ -2,30 +2,30 @@
 
 Base URL:
 
-- `http://192.168.1.216:8080`
+- `http://127.0.0.1:8080`
 
 CORS is enabled for:
 
-- `http://192.168.1.153`
+- `http://127.0.0.1`
 - `http://dashburg.local`
 - `http://localhost:5173`
-- regex: `http://(localhost|127.0.0.1|192.168.1.x)(:port)?`
+- regex: `http://(localhost|127.0.0.1|127.0.0.1)(:port)?`
 
 ## Health
 
 ```bash
-curl -s http://192.168.1.216:8080/api/v1/health
+curl -s http://127.0.0.1:8080/api/v1/health
 ```
 
 ## Trending / clusters / ideas / pains
 
 ```bash
-curl -s "http://192.168.1.216:8080/api/v1/topics/trending?limit=20"
-curl -s "http://192.168.1.216:8080/api/v1/clusters?limit=50"
-curl -s "http://192.168.1.216:8080/api/v1/clusters/<cluster_id>"
-curl -s "http://192.168.1.216:8080/api/v1/ideas?limit=100"
-curl -s "http://192.168.1.216:8080/api/v1/ideas/<idea_id>"
-curl -s "http://192.168.1.216:8080/api/v1/pains?topic=auto&limit=200"
+curl -s "http://127.0.0.1:8080/api/v1/topics/trending?limit=20"
+curl -s "http://127.0.0.1:8080/api/v1/clusters?limit=50"
+curl -s "http://127.0.0.1:8080/api/v1/clusters/<cluster_id>"
+curl -s "http://127.0.0.1:8080/api/v1/ideas?limit=100"
+curl -s "http://127.0.0.1:8080/api/v1/ideas/<idea_id>"
+curl -s "http://127.0.0.1:8080/api/v1/pains?topic=auto&limit=200"
 ```
 
 ## Start runs (non-blocking)
@@ -33,7 +33,7 @@ curl -s "http://192.168.1.216:8080/api/v1/pains?topic=auto&limit=200"
 Targeted run:
 
 ```bash
-curl -s -X POST http://192.168.1.216:8080/api/v1/runs/targeted \
+curl -s -X POST http://127.0.0.1:8080/api/v1/runs/targeted \
   -H 'content-type: application/json' \
   -d '{"query":"job application ghosting","topic":"jobs","limit":30,"enable_youtube":false}'
 ```
@@ -41,7 +41,7 @@ curl -s -X POST http://192.168.1.216:8080/api/v1/runs/targeted \
 Auto run:
 
 ```bash
-curl -s -X POST http://192.168.1.216:8080/api/v1/runs/auto \
+curl -s -X POST http://127.0.0.1:8080/api/v1/runs/auto \
   -H 'content-type: application/json' \
   -d '{"ideas_per_run":5,"target_topics":10,"limit_per_topic":20}'
 ```
@@ -49,19 +49,19 @@ curl -s -X POST http://192.168.1.216:8080/api/v1/runs/auto \
 Poll status:
 
 ```bash
-curl -s "http://192.168.1.216:8080/api/v1/runs?limit=50"
-curl -s "http://192.168.1.216:8080/api/v1/runs/<run_id>"
+curl -s "http://127.0.0.1:8080/api/v1/runs?limit=50"
+curl -s "http://127.0.0.1:8080/api/v1/runs/<run_id>"
 ```
 
 Dashburg-compat aliases:
 
 ```bash
-curl -s -X POST http://192.168.1.216:8080/api/runs/start \
+curl -s -X POST http://127.0.0.1:8080/api/runs/start \
   -H 'content-type: application/json' \
   -d '{"query":"job application ghosting","topic":"jobs","limit":30,"sources":{"youtube":true,"google_trends":true,"reddit":true,"x_trends":true},"sources_config":{"x_trends":{"enabled":true,"max_items":20,"use_auth":false}}}'
 
-curl -s "http://192.168.1.216:8080/api/runs/<run_id>"
-curl -s "http://192.168.1.216:8080/api/runs/<run_id>/results?limit=25"
+curl -s "http://127.0.0.1:8080/api/runs/<run_id>"
+curl -s "http://127.0.0.1:8080/api/runs/<run_id>/results?limit=25"
 ```
 
 Notes:
@@ -79,18 +79,18 @@ Planned fallback (not implemented yet):
 ## Provider stats / logs
 
 ```bash
-curl -s "http://192.168.1.216:8080/api/v1/providers/stats?limit=200"
-curl -s "http://192.168.1.216:8080/api/v1/logs/tail?offset=0&max_lines=200"
+curl -s "http://127.0.0.1:8080/api/v1/providers/stats?limit=200"
+curl -s "http://127.0.0.1:8080/api/v1/logs/tail?offset=0&max_lines=200"
 ```
 
 ## AppGen JSON
 
 ```bash
-curl -s "http://192.168.1.216:8080/api/v1/appgen/ideas?sort=overall_score_desc"
-curl -s "http://192.168.1.216:8080/api/v1/appgen/ideas/<idea_id>"
-curl -s "http://192.168.1.216:8080/api/v1/appgen/runs?limit=50"
-curl -s "http://192.168.1.216:8080/api/v1/appgen/outbox?limit=200"
-curl -s -X POST "http://192.168.1.216:8080/api/v1/appgen/ideas/<idea_id>/export"
+curl -s "http://127.0.0.1:8080/api/v1/appgen/ideas?sort=overall_score_desc"
+curl -s "http://127.0.0.1:8080/api/v1/appgen/ideas/<idea_id>"
+curl -s "http://127.0.0.1:8080/api/v1/appgen/runs?limit=50"
+curl -s "http://127.0.0.1:8080/api/v1/appgen/outbox?limit=200"
+curl -s -X POST "http://127.0.0.1:8080/api/v1/appgen/ideas/<idea_id>/export"
 ```
 
 ## Web Search Fallback Behavior

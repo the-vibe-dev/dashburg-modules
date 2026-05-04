@@ -1,0 +1,18 @@
+[Unit]
+Description=Dashburg Module Runtime: discord-control
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__DASHGITHUB_ROOT__/services/discord-bridge-runtime
+EnvironmentFile=-__DASHGITHUB_ROOT__/.env
+EnvironmentFile=-__DASHGITHUB_ROOT__/services/discord-bridge-runtime/.env
+ExecStart=/bin/bash -lc 'source .venv/bin/activate && exec python discord_bridge.py'
+Restart=always
+RestartSec=3
+StandardOutput=append:__DASHGITHUB_ROOT__/data/module-system/logs/discord-control.log
+StandardError=append:__DASHGITHUB_ROOT__/data/module-system/logs/discord-control.log
+
+[Install]
+WantedBy=default.target

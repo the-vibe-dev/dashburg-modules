@@ -25,6 +25,9 @@
     "default_port": 9101,
     "start_command": "python discord_bridge.py",
     "env_file": ".env",
-    "notes": "Bundled local bridge/bot runtime; requires Discord bot token."
+    "notes": "Bundled local bridge/bot runtime; requires Discord bot token.",
+    "health_path": "/health",
+    "install_command": "pip install -r requirements.txt",
+    "post_install": []
   }
 }

@@ -19,7 +19,7 @@ Configure Trend Harvester base URL in Dashburg environment.
 
 Example:
 
-`TREND_SERVICE_BASE_URL=http://192.168.1.216:8400`
+`TREND_SERVICE_BASE_URL=http://127.0.0.1:8400`
 
 Dashburg should reference this variable:
 

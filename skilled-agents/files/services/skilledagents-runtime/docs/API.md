@@ -33,7 +33,7 @@ Response example:
     "id": "qwen-tts",
     "name": "qwen-tts",
     "description": "Local text-to-speech using Qwen3-TTS...",
-    "path": "/home/trilobyte/.codex/skills/qwen-tts"
+    "path": "/opt/codex/skills/qwen-tts"
   }
 ]
 ```
