@@ -1,0 +1,20 @@
+{
+  "key": "schedule-ops",
+  "name": "ScheduleOps",
+  "version": "0.1.0",
+  "description": "Distributed scheduler policy and runner cron control.",
+  "dependencies": {
+    "modules": [],
+    "core_capabilities": [
+      "remote-ops",
+      "orchestration"
+    ]
+  },
+  "backend": {
+    "import": "app.modules.schedule_ops.module:schedule_ops_module"
+  },
+  "frontend": {
+    "key": "scheduleops",
+    "export": "scheduleOpsModule"
+  }
+}

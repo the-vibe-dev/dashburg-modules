@@ -1,0 +1,19 @@
+{
+  "key": "webagent",
+  "name": "WebAgent",
+  "version": "0.1.0",
+  "description": "Browser automation, scraping, and generated test workflow.",
+  "dependencies": {
+    "modules": [],
+    "core_capabilities": [
+      "remote-ops"
+    ]
+  },
+  "backend": {
+    "import": "app.modules.webagent.module:webagent_module"
+  },
+  "frontend": {
+    "key": "webagent",
+    "export": "webAgentModule"
+  }
+}

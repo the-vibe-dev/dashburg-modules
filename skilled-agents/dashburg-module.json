@@ -1,0 +1,17 @@
+{
+  "key": "skilled-agents",
+  "name": "Skilled Agents",
+  "version": "0.1.0",
+  "description": "Skilled agent proxy and control pages with external validation hooks.",
+  "dependencies": {
+    "modules": [],
+    "core_capabilities": []
+  },
+  "backend": {
+    "import": "app.modules.skilled_agents.module:skilled_agents_module"
+  },
+  "frontend": {
+    "key": "skilledagents",
+    "export": "skilledAgentsModule"
+  }
+}

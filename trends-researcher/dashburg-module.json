@@ -1,0 +1,17 @@
+{
+  "key": "trends-researcher",
+  "name": "TrendsResearcher",
+  "version": "0.1.0",
+  "description": "Trend harvesting and export workflow with optional IdeaFactory handoff.",
+  "dependencies": {
+    "modules": [],
+    "core_capabilities": []
+  },
+  "backend": {
+    "import": "app.modules.trends_proxy.module:trends_proxy_module"
+  },
+  "frontend": {
+    "key": "trends",
+    "export": "trendsModule"
+  }
+}

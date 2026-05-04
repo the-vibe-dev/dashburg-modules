@@ -1,0 +1,22 @@
+{
+  "key": "discord-control",
+  "name": "Discord Control",
+  "version": "0.1.0",
+  "description": "Discord bridge, approval, and dispatch control plane.",
+  "dependencies": {
+    "modules": [],
+    "core_capabilities": [
+      "chat-api",
+      "memory",
+      "orchestration",
+      "remote-ops"
+    ]
+  },
+  "backend": {
+    "import": "app.modules.discord.module:discord_module"
+  },
+  "frontend": {
+    "key": "discord",
+    "export": "discordModule"
+  }
+}

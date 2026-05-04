@@ -1,0 +1,17 @@
+{
+  "key": "topic-insights",
+  "name": "TopicInsights",
+  "version": "0.1.0",
+  "description": "Research layer for pains, patterns, evidence, and topic opportunity discovery.",
+  "dependencies": {
+    "modules": [],
+    "core_capabilities": []
+  },
+  "backend": {
+    "import": "app.modules.topic_proxy.module:topic_proxy_module"
+  },
+  "frontend": {
+    "key": "topicinsights",
+    "export": "topicInsightsModule"
+  }
+}

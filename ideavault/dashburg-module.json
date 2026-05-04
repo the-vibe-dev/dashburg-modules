@@ -1,0 +1,19 @@
+{
+  "key": "ideavault",
+  "name": "IdeaVault",
+  "version": "0.1.0",
+  "description": "Saved ideas, lineage, and TopicFactory queue for cross-module handoff.",
+  "dependencies": {
+    "modules": [
+      "topic-insights"
+    ],
+    "core_capabilities": []
+  },
+  "backend": {
+    "import": "app.modules.ideavault.module:ideavault_module"
+  },
+  "frontend": {
+    "key": "ideavault",
+    "export": "ideaVaultModule"
+  }
+}

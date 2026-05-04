@@ -1,0 +1,19 @@
+{
+  "key": "idea-factory",
+  "name": "IdeaFactory",
+  "version": "0.1.0",
+  "description": "Opportunity ranking and weekly review workflow built on top of TopicInsights.",
+  "dependencies": {
+    "modules": [
+      "topic-insights"
+    ],
+    "core_capabilities": []
+  },
+  "backend": {
+    "import": "app.modules.appgen.module:appgen_module"
+  },
+  "frontend": {
+    "key": "appgen",
+    "export": "appgenModule"
+  }
+}
